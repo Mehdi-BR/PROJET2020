@@ -90,6 +90,15 @@ body {
 
 
 }
+
+#cover-Desc{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+}
 #nav{
     background-color: dimgrey;
 }
@@ -117,9 +126,6 @@ body {
     }
 }
 
-book-title{
-    align-text: center;
-}
 /*.cover{*/
 /*    align:center;*/
 /*    width:70% ;*/
@@ -157,6 +163,12 @@ book-title{
 
     width: 18rem;
     height: 100%;
+}
+#card-profile{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+
 }
 
 .cover{

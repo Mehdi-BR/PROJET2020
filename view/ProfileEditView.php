@@ -23,8 +23,8 @@ if(!$ext){
         </div>
         <div class="row">
             <div class="col">
-                <div class="card shadow" style="width: 18rem;">
-                    <img src="img/userProfile/<?=$img?>" class="img-thumbnail card-img-top rounded mx-auto d-block" id='img-upload'/>
+                <div class="card shadow"  style="width: 18rem;">
+                    <img src="img/userProfile/<?=$img?>" id="card-profile" class="img-thumbnail card-img-top rounded mx-auto d-block" id='img-upload'/>
                     <div class="card-body">
                         <p class="card-text text-center"><?php echo $user['nom']." ".$user['prenom']; ?></p>
                     </div>

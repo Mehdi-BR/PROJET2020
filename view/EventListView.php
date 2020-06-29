@@ -45,7 +45,7 @@ $title = htmlspecialchars('Events list')?>
 
                                         <img class="event" src="img/EventsPhotos/event0.png" alt="...">
                                     <?php }?>
-                                    <div class="carousel-caption d-none d-md-block event-disc">
+                                    <div class="carousel-caption d-none d-md-block event-disc" style="z-index: 68;">
 
                                         <h5><?=$event['event']?></h5>
                                         <p><?=$event['eventDescription']?></p>

@@ -22,7 +22,7 @@ if(!$ext){
 
         <div class="row">
             <div class="col-5 mt-4">
-                <img class="img-responsive cover shadow img-thumbnail rounded mx-auto d-block" height="900" width="600"  src="img/BooksCover/<?=$img?>" alt="<?=$book['BookTitle']?>">
+                <img class="shadow img-thumbnail " id="cover-Desc" height="900" width="600"  src="img/BooksCover/<?=$img?>" alt="<?=$book['BookTitle']?>">
                 <div class="button text-center">
                     <form action="index.php?action=<?=$fav[1]?>&amp;id=<?=$id?>&amp;uid=5"  method="post">
                         <button type="submit" class="btn btn-outline-primary">
@@ -56,7 +56,7 @@ if(!$ext){
             </div>
         </div>
 
-
+    </div>
 
 
 
