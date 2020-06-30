@@ -26,7 +26,7 @@ if(!$ext){
         <div class="list-group-item list-group-item-action d-flex justify-content-center bg-dark" id="nav"><h6 class="text-white"> <?php echo $user['prenom']." ".$user['nom']; ?></h6></div>
         <a href="index.php?action=ProfileInfo" class="list-group-item list-group-item-action d-flex justify-content-center bg-dark" id="nav"><h6 class="text-white">Mon profile</h6></a>
         <a href="index.php?action=listFavorites" class="list-group-item list-group-item-action d-flex justify-content-center bg-dark" id="nav"><h6 class="text-white">Ma bibliothéque</h6></a>
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-center bg-dark" id="nav"><h6 class="text-white">Se déconecter</h6></a>
+        <a href="index.php?action=logout" class="list-group-item list-group-item-action d-flex justify-content-center bg-dark" id="nav"><h6 class="text-white">Se déconecter</h6></a>
     </div>
 
 </div>

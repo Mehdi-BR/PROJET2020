@@ -60,6 +60,13 @@ function login($email, $mdp)
 
 
 }
+function logout(){
+    
+            $_SESSION = array();
+            session_destroy();
+            header('location: index.php');
+    
+}
 
 function signup()
 {
@@ -88,6 +95,8 @@ function ProfileInfo(){
 
 function UpdateProfile(){
     $userManager = new UserManager();
+    $User = $userManager->GetUser($_SESSION['id']);
+    $user=$User->fetch();
 
     $id=$_SESSION['id'];
     $nom=$_POST['nom'];
@@ -98,8 +107,8 @@ function UpdateProfile(){
     $date=$_POST['date'];
     $quartier=$_POST['quartier'];
     $image=$_FILES['image']['size'];
-var_dump($image);
-    if ($mdp) {
+
+    if ($mdp && $mdp==$user['mot_de_passe']) {
         if ($nom) {
             $info=$userManager->update('nom',$nom,$id);
 
@@ -123,7 +132,9 @@ var_dump($image);
 
     header('location: index.php?action=ProfileInfo');
 
-}}
+}
+    header('location: index.php?action=ProfileInfo');
+}
 function ReplaceImage($filePath,$id){
     $ext= ImageExists($filePath.$id);
     if($ext){
@@ -157,7 +168,9 @@ function checkFavorite($id, $uid)
     $BookManager = new BookManager();
 
     $fav = $BookManager->getFavotit($id, $uid);
+
     $fid = $fav->fetch();
+
     if ($fid[0] == $id) {
         $Fav = array('<svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>

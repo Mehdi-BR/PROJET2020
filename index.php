@@ -105,7 +105,12 @@ AddFavourite($id,$uid);
             }
 
         }
+        elseif ($_GET['action'] =='logout'){
+           logout();
+          
     }
+}
+
     else {
             HomePage();
         }

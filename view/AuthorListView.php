@@ -1,7 +1,7 @@
 <?php $title = 'Authors List'; ?>
 
 <?php ob_start(); ?>
-<div class="container">a
+<div class="container">
 <h1>la liste des Auteurs:</h1>
 
 <a id="button" href="index.php?action=addbook" >Ajouter Livre</a>
@@ -62,7 +62,7 @@ while ( $data = $authors->fetch()){
         echo "</div>";
     }
     ?>
-?>
+
 
 
 
