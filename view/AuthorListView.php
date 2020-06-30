@@ -54,6 +54,14 @@ while ( $data = $authors->fetch()){
     <?php
 
     if($rowCount % $numberOfColumns == 0){ ?> </div> <?php }}
+
+
+
+
+    if($rowCount % 4 !=0){
+        echo "</div>";
+    }
+    ?>
 ?>
 
 

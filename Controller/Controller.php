@@ -97,8 +97,8 @@ function UpdateProfile(){
     $cnmdp=$_POST['cnmdp'];
     $date=$_POST['date'];
     $quartier=$_POST['quartier'];
-    $image=$_POST['image'];
-
+    $image=$_FILES['image']['size'];
+var_dump($image);
     if ($mdp) {
         if ($nom) {
             $info=$userManager->update('nom',$nom,$id);
@@ -116,7 +116,7 @@ function UpdateProfile(){
         if ($quartier) {
             $info=$userManager->update('quartier',$quartier,$id);
         }
-        if($image){
+        if($image>0){
         ReplaceImage('img/userProfile/user',$_SESSION['id']);
         $userManager->upload($_SESSION['id'],'img/userProfile/user');
     }

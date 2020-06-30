@@ -9,9 +9,10 @@ $title = htmlspecialchars('Add Author')?>
 $data=$Max->fetch();
 
 $id=intval($data['AuthorID'])+1;
+var_dump($id);
 ?>
     <div class="text-center"><h1>Ajouter un Auteur:</h1></div>
-    <form action="index.php?action=uploadAuthor&amp;id=<?=$id ?>" method="post" enctype="multipart/form-data">
+    <form action="index.php?action=uploadAuthor&amp;id=<?=$id?>" method="post" enctype="multipart/form-data">
         <div class="form-group">
 
             Author Name:

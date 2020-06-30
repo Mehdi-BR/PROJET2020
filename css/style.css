@@ -29,7 +29,7 @@ body {
     width: 100%;
     color: white;
     text-align: center;
-    height: 70px;
+    height: 60px;
     padding-top:20px ;
 }
 body {
@@ -207,4 +207,27 @@ body {
     background: rgb(2,0,36);
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,117,121,0.41220238095238093) 0%, rgba(9,114,119,1) 100%, rgba(0,212,255,1) 100%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+::-webkit-scrollbar {
+    z-index: 71;
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    z-index: 70;
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    z-index: 73;
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    z-index: 72;
+    background: #555;
 }
