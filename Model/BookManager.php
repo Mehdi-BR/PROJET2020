@@ -9,7 +9,7 @@ class BookManager extends manager
     public function getBooks()
     {
         $db = $this->dbconnect();
-        $req = $db->query('SELECT * FROM books ');
+        $req = $db->query('SELECT * FROM `books` ORDER BY `books`.`BookID` DESC');
 
         return $req;
     }

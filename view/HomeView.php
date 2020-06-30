@@ -16,74 +16,60 @@
 
             <div id="carouselExampleControls" class="carousel shadow slide  bg-secondary" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active ">
-                        <div class="container d-flex justify-content-around">
-                            <a href="#" class="text-light"><img src="../img/books/julia.jpg" class="book-cover img-thumbnail"  alt="julia">
-                                <h6 class="text-center ">julia s'story</h6></a>
-                            <a href="#" class="text-light"><img src="../img/books/julia.jpg" class="book-cover img-thumbnail"  alt="julia">
-                                <h6 class="text-center ">julia s'story</h6></a>
-                            <a href="#" class="text-light"><img src="../img/books/julia.jpg" class="book-cover img-thumbnail"  alt="julia">
-                                <h6 class="text-center ">julia s'story</h6></a>
-                            <a href="#" class="text-light"><img src="../img/books/julia.jpg" class="book-cover img-thumbnail"  alt="julia">
-                                <h6 class="text-center ">julia s'story</h6></a>
-                        </div>
-                    </div>
+                    <?php
+                    $NumCol=4;
+                    $CarouselCount=0;
+                    $active='active';
+                    while($data=$books->fetch()){
+                        if($CarouselCount%4==0){
+                            ?><div class="carousel-item <?=$active?> ">
+                        <div class="container d-flex justify-content-around"> <?php }
+                        $CarouselCount++;?>
+                        <a href="#" class="text-light"><?php
+                            $ext= ImageExists("img/booksCover/cover".$data['BookID']);
+                            if(!$ext){?>
 
-                    <div class="carousel-item ">
-                        <div class="container d-flex justify-content-around">
-                            <a href="#" class="text-light"><img src="../img/books/julia.jpg" class="book-cover img-thumbnail"  alt="julia">
-                                <h6 class="text-center ">julia s'story</h6></a>
-                            <a href="#" class="text-light"><img src="../img/books/julia.jpg" class="book-cover img-thumbnail"  alt="julia">
-                                <h6 class="text-center ">julia s'story</h6></a>
-                            <a href="#" class="text-light"><img src="../img/books/julia.jpg" class="book-cover img-thumbnail"  alt="julia">
-                                <h6 class="text-center ">julia s'story</h6></a>
-                            <a href="#" class="text-light"><img src="../img/books/julia.jpg" class="book-cover img-thumbnail"  alt="julia">
-                                <h6 class="text-center ">julia s'story</h6></a>
-                        </div>
-                    </div>
+                                <img class="book-cover img-thumbnail" style="width: 170px; height: 300px " src="img/booksCover/unknownBook.png" alt="<?=$data['BookTitle']?>" >
+
+                                <?php
+                            }else {
 
 
-                    <div class="carousel-item ">
-                        <div class="container d-flex justify-content-around">
-                            <a href="#" class="text-light"><img src="../img/books/julia.jpg" class="book-cover img-thumbnail"  alt="julia">
-                                <h6 class="text-center ">julia s'story</h6></a>
-                            <a href="#" class="text-light"><img src="../img/books/julia.jpg" class="book-cover img-thumbnail"  alt="julia">
-                                <h6 class="text-center ">julia s'story</h6></a>
-                            <a href="#" class="text-light"><img src="../img/books/julia.jpg" class="book-cover img-thumbnail"  alt="julia">
-                                <h6 class="text-center ">julia s'story</h6></a>
-                            <a href="#" class="text-light"><img src="../img/books/julia.jpg" class="book-cover img-thumbnail"  alt="julia">
-                                <h6 class="text-center ">julia s'story</h6></a>
-                        </div>
-                    </div>
+                                ?>
+                                <img class="book-cover img-thumbnail" style="width: 170px; height: 300px " src="img/booksCover/cover<?= $data['BookID'] ?><?= $ext ?>" alt="<?= $data['BookTitle'] ?>">
+
+                                <?php
+                            }
+                            ?>
+                                <h6 class="text-center "><?=$data['BookTitle']?></h6></a>
+                                <?php
+                                if($CarouselCount%$NumCol==0){
+                                ?></div></div><?php
+                                }
+                    $active='not-active';
+                    }
+                    if($CarouselCount%4==0){
+                        echo'</div>';
+                    }
+                    ?>
+
                 </div>
 
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+
             </div>
 
         </div>
-    </div>
-
-
-
-
 
 
 
 </div>
-<?php $content=ob_get_clean();?>
+<?php $content = ob_get_clean(); ?>
 
 <?php
 
-if(isset($_SESSION['id']) and $_SESSION['id']!=NULL){
-require('TemplateLoggedIn.php');
-}else{
-require('templateNotLoggedIn.php');
+if (isset($_SESSION['id']) and $_SESSION['id'] != NULL) {
+    require('TemplateLoggedIn.php');
+} else {
+    require('templateNotLoggedIn.php');
 
 }

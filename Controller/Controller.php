@@ -10,6 +10,9 @@ require('model/EventsManager.php');
 require('Model/UsersManager.php');
 
 function HomePage(){
+    $BookManager = new BookManager();
+
+    $books = $BookManager->getBooks();
     require ('view/HomeView.php');
 }
 
@@ -51,7 +54,7 @@ function login($email, $mdp)
             $_SESSION['prenom'] = $user['prenom'];
 
 
-            require('view/HomeView.php');
+            header('location: index.php');
         }
     }
 
@@ -94,7 +97,7 @@ function UpdateProfile(){
     $cnmdp=$_POST['cnmdp'];
     $date=$_POST['date'];
     $quartier=$_POST['quartier'];
-
+    $image=$_POST['image'];
 
     if ($mdp) {
         if ($nom) {
@@ -113,9 +116,10 @@ function UpdateProfile(){
         if ($quartier) {
             $info=$userManager->update('quartier',$quartier,$id);
         }
+        if($image){
         ReplaceImage('img/userProfile/user',$_SESSION['id']);
         $userManager->upload($_SESSION['id'],'img/userProfile/user');
-
+    }
 
     header('location: index.php?action=ProfileInfo');
 
