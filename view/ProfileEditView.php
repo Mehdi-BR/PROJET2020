@@ -67,7 +67,7 @@ if(!$ext){
                         </div>
 
                         <div class="form-row form-group">
-                            <label for="exampleDropdownFormPassword1">Mot de passe:</label>
+                            <label for="exampleDropdownFormPassword1">Mot de passe: <span style="color: red;">*</span></label>
                             <input type="password" name="mdp" class="form-control" id="exampleDropdownFormPassword1" placeholder="mot de passe" required>
                         </div>
                         <div class="form-row form-group">

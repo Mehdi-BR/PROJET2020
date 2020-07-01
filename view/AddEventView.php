@@ -10,6 +10,7 @@ $data=$Max->fetch();
 
 $id=intval($data['eventID'])+1;
 ?>
+<div class="container">
     <div class="text-center"><h1>Ajouter un Evenement:</h1></div>
     <form action="index.php?action=uploadEvent&amp;id=<?=$id?>" method="post" enctype="multipart/form-data">
         <div class="form-group">
@@ -40,7 +41,7 @@ $id=intval($data['eventID'])+1;
         </div>
 
     </form>
-
+</div>
 
 <?php $Max->closeCursor();?>
 <?php $content = ob_get_clean(); ?>

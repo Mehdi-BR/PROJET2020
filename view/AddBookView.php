@@ -16,22 +16,22 @@ $id=intval($data['BookID'])+1;
 <form action="index.php?action=uploadBook&amp;id=<?=$id ?>" method="post" enctype="multipart/form-data">
    <div class="form-group">
 
-       book title:
+       Titre du livre:
 
     <input type="text" class="form-control" name="titleBook" required>
    </div>
     <div class="form-group">
-        book discription:
+        Description du livre:
         <textarea class="form-control" name="discBook"  rows="3" required></textarea>
 <!--    <input type="text" name="discBook--><?//=intval($data['BookID'])+1; ?><!--">-->
     </div>
     <div class="form-group">
-    Select cover for the book :
+    choisis une illustration pour ce livre :
     <input type="file" name="image" id="cover<?=$id?>">
     </div>
 
     <div class="form-group">
-        <label for="author">Author:</label>
+        <label for="author">Auteur:</label>
         <select name="author" class="form-control" id="author" required>
             <option value="">---- -----</option>
             <?php

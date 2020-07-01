@@ -12,7 +12,7 @@ require('Model/UsersManager.php');
 function HomePage(){
     $BookManager = new BookManager();
 
-    $books = $BookManager->getBooks();
+    $books = $BookManager->getBooksByID();
     require ('view/HomeView.php');
 }
 
@@ -53,9 +53,9 @@ function login($email, $mdp)
             $_SESSION['nom'] = $user['nom'];
             $_SESSION['prenom'] = $user['prenom'];
             $_SESSION['admin'] = $user['admin'];
-
             header('location: index.php');
-        }
+        }else header('location: index.php');
+
     }
 
 
@@ -341,10 +341,10 @@ function uploadevent($event, $eventDisc, $eventDate)
 
 
     if ($affectedLines === false) {
-        echo 'Impossible d\'ajouter le livre!';
+        echo 'Impossible d\'ajouter l evenement!';
 
     } else {
-        header('Location: index.php');
+        header('Location: index.php?action=listEvents');
     }
 
 
@@ -401,7 +401,7 @@ function deleteElement($element, $id)
         case 'event':
             $eventManager = new EventManager();
             $affectedlines = $eventManager->DeleteEvent($id);
-
+            header('location: index.php?action=listEvents');
             break;
         default:
             echo "error";

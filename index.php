@@ -6,6 +6,8 @@
 try {
     require('Controller/Controller.php');
 if(isset($_GET['action'])) {
+
+
     if ($_GET['action'] == 'login') {
         login($_POST['email'], $_POST['mdp']);
 
@@ -108,8 +110,7 @@ AddFavourite($id,$uid);
         elseif ($_GET['action'] =='logout'){
            logout();
           
-    }elseif(isset($_GET['action']))
-    {if($_GET['action'] == 'confirmer') {
+    }elseif(isset($_GET['action'])) {if($_GET['action'] == 'confirmer') {
         GetNonConfUsers();}
         if($_GET['action'] == 'conf') {
             ConfirmUsers($_GET['id']);

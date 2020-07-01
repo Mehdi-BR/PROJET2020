@@ -16,17 +16,17 @@ $id=intval($data['AuthorID'])+1;
     <form action="index.php?action=uploadAuthor&amp;id=<?=$id?>" method="post" enctype="multipart/form-data">
         <div class="form-group">
 
-            Author Name:
+            Nom complet d'auteur:
 
             <input type="text" class="form-control" name="NameAuthor" required>
 
         </div>
         <div class="form-group">
-            Author description:
+            Description d'auteur:
             <textarea class="form-control" name="DiscAuthor"  rows="3"required></textarea>
         </div>
         <div class="form-group">
-            Select cover for the book :
+            choisis une image pour cet auteur :
             <input type="file" name="image" id="cover<?=$id?>"required>
         </div>
 

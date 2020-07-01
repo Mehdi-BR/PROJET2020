@@ -35,7 +35,7 @@
 
             </div>
             <div class="col-1">
-                <a href="index.php" class="nav-link text-white" href="#">Home<span class="sr-only">(current)</span></a>
+                <a href="index.php" class="nav-link text-white" href="#">Accuille<span class="sr-only">(current)</span></a>
             </div>
             <div class="col-1">
                 <a class="nav-link text-white" href="index.php?action=listEvents">Evenement</a>

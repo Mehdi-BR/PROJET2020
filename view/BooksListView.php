@@ -20,10 +20,10 @@
                           d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                 </svg>
                 Ajouter Livre</a></div>
-    </div>
+
     <?php  }
     ?>
-
+</div>
 
 <?php
 
@@ -33,7 +33,7 @@ $bootstrapCol=12/$numberOfColumns;
 while ( $data = $books->fetch()){
     if ($rowCount % $numberOfColumns == 0)
     { ?> <div class="row"> <?php }  $rowCount++; ?>
-    <div class="col-sm-<?=$bootstrapCol?> mb-4">
+    <div class="col-sm-<?=$bootstrapCol?> text-center mb-4">
         <a href="index.php?action=BookPage&amp;id=<?=$data['BookID']?>">
             <?php
             $ext= ImageExists("img/booksCover/cover".$data['BookID']);

@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 <div class="container">
     <div class="row mt-4 mb-4">
-        <div class="col"><h1>la liste des livres:</h1></div>
+        <div class="col"><h1>la liste des Auteurs:</h1></div>
         <?php
         if($_SESSION['admin']==1){
         ?>
@@ -36,7 +36,7 @@ $bootstrapCol=12/$numberOfColumns;
 while ( $data = $authors->fetch()){
     if ($rowCount % $numberOfColumns == 0)
     { ?> <div class="row"> <?php }  $rowCount++; ?>
-    <div class="col-sm-<?=$bootstrapCol?>">
+    <div class="col-sm-<?=$bootstrapCol?> text-center">
         <a href="index.php?action=AuthorPage&amp;id=<?=$data['AuthorID']?>">
         <?php
 
