@@ -52,7 +52,7 @@ function login($email, $mdp)
 
             $_SESSION['nom'] = $user['nom'];
             $_SESSION['prenom'] = $user['prenom'];
-
+            $_SESSION['admin'] = $user['admin'];
 
             header('location: index.php');
         }
@@ -142,6 +142,25 @@ function ReplaceImage($filePath,$id){
 
         unlink($filePath.$_SESSION['id'].$ext);
     }
+}
+
+function GetNonConfUsers(){
+    $NonConfManager = new UserManager();
+    $users = $NonConfManager->GetUsers();
+
+
+
+    require('view/NonConfView.php');
+}
+
+function ConfirmUsers($id)
+{
+    $NonConfManager = new UserManager();
+    $users = $NonConfManager->ConfUsers($id);
+
+
+
+    header('Location: index.php?action=confirmer');
 }
 
 

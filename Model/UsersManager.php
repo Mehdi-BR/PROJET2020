@@ -30,6 +30,22 @@ class UserManager extends manager
 
 
     }
+
+    public function GetUsers()
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT * FROM `user` WHERE confirmed = 0 ');
+
+        return $req;
+    }
+
+    public function ConfUsers($id)
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('UPDATE `user` SET `confirmed`= 1 WHERE id = '.$id );
+
+        return $req;
+    }
     public function update($varname,$var,$id)
     {
         $db = $this->dbConnect();

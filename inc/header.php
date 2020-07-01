@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <title><?=$title?></title>
     <title>Simple Sidebar - Start Bootstrap Template</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Bootstrap core CSS -->
@@ -31,7 +31,7 @@
     <div id="page-content-wrapper">
         <nav class="navbar navbar-dark bg-dark">
 
-            <div class="col-2"> <a class="navbar-brand" href="#">Logo</a>
+            <div class="col-2 navbar-brand"> <a   href="#"><img ID="logo"  src="img/logo.png"></a>
 
             </div>
             <div class="col-1">
@@ -40,6 +40,7 @@
             <div class="col-1">
                 <a class="nav-link text-white" href="index.php?action=listEvents">Evenement</a>
             </div>
+
             <div class="col-2 ">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                    Notre Bibliothéque
@@ -49,9 +50,19 @@
                     <a class="dropdown-item" href="index.php?action=listBooks">Nos livres</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="index.php?action=listAuthors">Nos Auteurs</a>
-                </div>
 
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="index.php?action=search">chercher un livre</a>
             </div>
+            </div>
+            <?php
+            if($_SESSION['admin']==1) {
+
+                echo '<div class="col-3">
+                    <a class="nav-link text-white" href="index.php?action=confirmer">les Utilisateurs non confirmés</a>
+                </div>';
+            }
+            ?>
             <div class="col-2 d-flex justify-content-end ">
                 <button id="menu-toggle" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

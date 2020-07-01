@@ -139,7 +139,7 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <nav class="navbar navbar-dark bg-dark">
-            <div class="col-2"> <a class="navbar-brand" href="#">Logo</a>
+            <div class="col-2"> <a class="navbar-brand" href="#"><img src="img/logo.png" id="logo"></a>
 
             </div>
             <div class="col-1">

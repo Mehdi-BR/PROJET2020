@@ -1,4 +1,4 @@
-<?php $title = 'Books List'; ?>
+<?php $title = 'chercher livre'; ?>
 
 <?php ob_start(); ?>
 <div class="container">
@@ -91,7 +91,11 @@ while ( $data = $books->fetch()){
 
     if($rowCount % $numberOfColumns == 0){ ?> </div> <?php }}
 ?>
-
+    <?php
+    if($rowCount % 4 !=0){
+        echo "</div>";
+    }
+    ?>
 
 
 </div>
