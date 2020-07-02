@@ -29,6 +29,7 @@
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
+        <?php if($_SESSION['confirmed']==1){ echo '
         <nav class="navbar navbar-dark bg-dark">
 
             <div class="col-2 navbar-brand"> <a   href="#"><img ID="logo"  src="img/logo.png"></a>
@@ -38,7 +39,7 @@
                 <a href="index.php" class="nav-link text-white" href="#">Accuille<span class="sr-only">(current)</span></a>
             </div>
             <div class="col-1">
-                <a class="nav-link text-white" href="index.php?action=listEvents">Evenement</a>
+                <a class="nav-link text-white" href="index.php?action=listEvents">Evenement</a> 
             </div>
 
             <div class="col-2 ">
@@ -54,7 +55,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="index.php?action=search">chercher un livre</a>
             </div>
-            </div>
+            </div>' ?>
             <?php
             if($_SESSION['admin']==1) {
 
@@ -62,10 +63,57 @@
                     <a class="nav-link text-white" href="index.php?action=confirmer">les Utilisateurs non confirmés</a>
                 </div>';
             }
-            ?>
+            ?><?php echo '
             <div class="col-2 d-flex justify-content-end ">
                 <button id="menu-toggle" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-        </nav>
+        </nav>';
+    }?><?php if($_SESSION['confirmed']==0){ echo '
+        <nav class="navbar navbar-dark bg-dark">
+
+            <div class="col-2 navbar-brand"> <a   href="index.php" ><img ID="logo"  src="img/logo.png"></a>
+
+            </div>
+            <div class="col-1">
+                <a href="index.php" class="nav-link text-white" href="index.php">Accuille<span class="sr-only">(current)</span></a>
+            </div>
+            <div class="col-1">
+                <a class="nav-link text-white" href="index.php"data-toggle="modal" data-target="#nonconf">Evenement</a> 
+            </div>
+
+            <div class="col-2 ">
+                <a class="nav-link dropdown-toggle text-white" href="index.php" data-toggle="modal" data-target="#nonconf">
+                   Notre Bibliothéque
+                </a>
+                
+            </div>
+            <div class="col-2 d-flex justify-content-end ">
+                <button id="menu-toggle" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>';
+    }?>
+
+    <div class="modal fade" id="nonconf" tabindex="-1" role="dialog">
+    <div class="modal-dialog"  role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">identifiez vous:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+
+                    <p>veuillez confirmez votre compte<p>
+
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

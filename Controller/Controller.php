@@ -29,6 +29,7 @@ function checkAdmin(){
 }
 
 
+
 function getData(){
     $UserManager = new UserManager();
     $User = $UserManager->GetUser($_SESSION['id']);
@@ -53,6 +54,7 @@ function login($email, $mdp)
             $_SESSION['nom'] = $user['nom'];
             $_SESSION['prenom'] = $user['prenom'];
             $_SESSION['admin'] = $user['admin'];
+            $_SESSION['confirmed'] = $user['confirmed'];
             header('location: index.php');
         }else header('location: index.php');
 
