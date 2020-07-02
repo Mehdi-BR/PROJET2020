@@ -111,10 +111,15 @@ AddFavourite($id,$uid);
            logout();
           
     }elseif(isset($_GET['action'])) {if($_GET['action'] == 'confirmer') {
-        GetNonConfUsers();}
+        GetNonConfUsers();
+        
+        }
         if($_GET['action'] == 'conf') {
             ConfirmUsers($_GET['id']);
 
+        }
+        elseif ($_GET['action'] =='statistics'){
+           statistics();
         }
     }
 }

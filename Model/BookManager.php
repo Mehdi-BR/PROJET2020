@@ -13,6 +13,15 @@ class BookManager extends manager
 
         return $req;
     }
+
+    public function booksbygen($gen)
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT COUNT(*) FROM books WHERE genreID='.$gen);
+
+        return $req;
+    }
+    
     public function getBooksByID()
     {
         $db = $this->dbconnect();

@@ -12,6 +12,40 @@ class UserManager extends manager
         return $req;
     }
 
+    public function allusers()
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT COUNT(*) FROM user WHERE admin=0');
+
+        return $req;
+    }
+
+    public function fusers()
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT COUNT(*) FROM user WHERE admin=0 AND genre=\'femme\'');
+
+        return $req;
+    }
+
+    public function musers()
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT COUNT(*) FROM user WHERE admin=0 AND genre=\'homme\'');
+
+        return $req;
+    }
+
+    public function allbooks()
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT COUNT(*) FROM books ');
+
+        return $req;
+    }
+
+    
+
     public function signupconf($nom,$prenom,$email,$mdp,$date,$quartier,$genre)
     {
         $db = $this->dbConnect();

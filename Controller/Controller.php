@@ -155,6 +155,7 @@ function GetNonConfUsers(){
     require('view/NonConfView.php');
 }
 
+
 function ConfirmUsers($id)
 {
     $NonConfManager = new UserManager();
@@ -412,5 +413,33 @@ function deleteElement($element, $id)
     }
 
 
+}
+function genstats(){
+    $bookmanager = new BookManager();
+    $gen = $bookmanager->getGenres();
+    $data = array();
+    while ($G = $gen->fetch()) {
+       $res = $bookmanager->booksbygen($G['genreID']);
+       $data[] = $res->fetch();
+    }
+
+return $data;
+    
+    
+}
+
+function statistics(){
+    $stats = new UserManager();
+    $bookmanager = new BookManager();
+    $ausers = $stats->allusers();
+    $musers = $stats->musers();
+    $fusers = $stats->fusers();
+    $abooks = $stats->allbooks();
+    $gen = $bookmanager->getGenres();
+    $bookbyg = genstats();
+
+    
+    
+    require('view/statistics.php');
 }
 

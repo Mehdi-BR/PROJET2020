@@ -60,7 +60,15 @@
             if($_SESSION['admin']==1) {
 
                 echo '<div class="col-3">
-                    <a class="nav-link text-white" href="index.php?action=confirmer">les Utilisateurs non confirmés</a>
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="adminDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Espace admin</a>
+                    <div class="dropdown-menu" aria-labelledby="adminDropdown">
+
+                    
+                    <a class="dropdown-item" href="index.php?action=confirmer">confirmer utilisateurs</a>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="index.php?action=statistics">statistiques</a>
+            </div>
                 </div>';
             }
             ?><?php echo '
@@ -101,7 +109,7 @@
     <div class="modal-dialog"  role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">identifiez vous:</h5>
+                <h5 class="modal-title">Accès refusé.</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"></span>
                 </button>
